@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>web app</title>
+</head>
+<body>
+    <main>
+        <h1>Habits Tracker</h1>
+        <h2>Countdown to 2024</h2>
+        <div id="timer"></div>
+        <div id="clockdiv"></div>
+        <h2>Summary</h2>
+        <h3> So far, you have spent
+            <span id="time">
+                 ___
+            </span> hours of 2023 
+            <span id="task">
+                 ___
+            </span></h3>
+        <label class="custom-field one">
+            <input type="text" required id="name-input"/>
+            <span class="placeholder">Enter Habit Completed</span>
+        </label>
+        <label class="custom-field one">
+            <input type="text" required id="hours-input"/>
+            <span class="placeholder">Enter Hours Spent</span>
+        </label>
+        <div>
+            <button id="add-name-btn">Add
+                <span class="add"></span>
+                <span class="add"></span>
+                <span class="add"></span>
+                <span class="add"></span>
+                <span class="add"></span>
+                <span class="add"></span>
+                <span class="add"></span>
+                <span class="add"></span>
+                <span class="add"></span>
+                <span class="add"></span>
+                <span class="add"></span>
+                <span class="add"></span>
+                <span class="add"></span>
+                <span class="add"></span>
+                <span class="add"></span>
+                <span class="add"></span>
+                <span class="add"></span>
+                <span class="add"></span>
+                <span class="add"></span>
+                <span class="add"></span>
+                <span class="add"></span>
+                <span class="add"></span>
+                <span class="add"></span>
+                <span class="add"></span>
+            </button>
+        </div>
+        <br>
+        <div>
+            <input placeholder="Search By Task"
+            id="search-input">
+            <button id="search-btn">Search</button>
+        </div>
+        <div>
+            <table class="content-table" id="table">
+                <thead>
+                    <th>Task</th>
+                    <th>Hours Spent</th>
+                    <th>Date Completed</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <section hidden id="update-row">
+                <label class="custom-field one">
+                    <input type="text" required id="update-name-input"/>
+                    <span class="placeholder">Rename Task</span>
+                </label>
+                <button id="update-row-btn">Update</button>
+            </section>
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>

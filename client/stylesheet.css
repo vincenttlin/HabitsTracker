@@ -1,0 +1,336 @@
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+main {
+    width: 50%;
+    margin: 50px auto;
+    text-align: center;
+}
+/**
+table {
+    margin: 50px auto;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+*/
+
+#time, #task {
+    color: #009879;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.content-table {
+    text-align: center;
+    margin-left: auto;  
+    margin-right: auto;  
+    border-collapse: collapse;
+    margin: 30px auto;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+    background-color: #009879;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+}
+
+.content-table tbody tr {
+    border-bottom: thin solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 3px solid #009879;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.custom-field {
+    position: relative;
+    font-size: 14px;
+    padding-top: 20px;
+    margin-bottom: 5px;
+}
+
+input {
+    border: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #f2f2f2;
+    padding: 12px;
+    border-radius: 3px;
+    width: 250px;
+    outline: none;
+    font-size: 14px;
+}
+
+.custom-field .placeholder {
+    position: absolute;
+    left: 12px;
+    top: calc(50% + 10px);
+    transform: translateY(-50%);
+    color: #aaa;
+    transition:
+        top 0.3s ease,
+        font-size 0.3s ease,
+        color 0.3s ease;
+}
+
+.custom-field input:focus + .placeholder {
+    top: 10px;
+    font-size: 10px;
+    color: #222;
+}
+
+/* ONE */
+.custom-field.one input {
+    background: none;
+    border: 2px solid #ddd;
+    transition: border-color 0.3s ease;
+
+}
+
+.custom-field.one input:valid,
+.custom-field.one input:focus {
+    border-color: #222;
+    transition-delay: 0.1s;
+}
+
+.custom-field.one input:valid + .placeholder {
+    padding: 0 5px;
+    left: 8px;
+}
+
+
+.custom-field.one input:valid + .placeholder,
+.custom-field.one input:focus + .placeholder {
+    top: 8px;
+    background: #fff;
+    padding: 0 5px;
+    left: 8px;
+}
+
+#name-input {
+    margin: 5px auto;
+}
+
+#hours-input {
+    margin: 5px auto;
+}
+
+/**
+th, td {
+    padding: 5px;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+*/
+
+h1 {
+    text-align: center;
+    margin: 50px auto;
+}
+
+button {
+    display: inline-block;
+    font-size: 14px;
+    padding: 20px 20px;
+    background: #009879;
+    color: #fff;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 1px 8px rgba(147, 250, 165, 1);
+    transition: box-shadow 0.25s;
+    z-index: 2;
+}
+
+button:active {
+    background: #009879;
+    box-shadow: 0 1px 8px rgba(147, 250, 165, 1);
+}
+
+button .add {
+    background: #009879;
+    border: 1px solid #009879;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    z-index: -1;
+    transform: scale(0);
+}
+
+button .add:nth-child(1) {
+    top: -50%;
+    left: -20%;
+}
+button .add:nth-child(2) {
+    top: -100%;
+    left: 0%;
+}
+button .add:nth-child(3) {
+    top: -50%;
+    left: 10%;
+    background: transparent;
+}
+button .add:nth-child(4) {
+    top: -66%;
+    left: 20%;
+}
+button .add:nth-child(5) {
+    top: -90%;
+    left: 28%;
+    background: transparent;
+}
+button .add:nth-child(6) {
+    top: -70%;
+    left: -42%;
+}
+button .add:nth-child(7) {
+    top: -80%;
+    left: 60%;
+    background: transparent;
+}
+button .add:nth-child(8) {
+    top: -50%;
+    left: 70%;
+}
+button .add:nth-child(9) {
+    top: -120%;
+    left: 80%;
+}
+button .add:nth-child(10) {
+    top: -70%;
+    left: 90%;
+}
+button .add:nth-child(11) {
+    top: -80%;
+    left: 100%;
+    background: transparent;
+}
+button .add:nth-child(12) {
+    top: -50%;
+    left: 110%;
+}
+button .add:nth-child(13) {
+    top: 40%;
+    left: -20%;
+}
+button .add:nth-child(14) {
+    top: 60%;
+    left: 120%;
+    background: transparent;
+}
+button .add:nth-child(15) {
+    top: 160%;
+    left: -10%;
+}
+button .add:nth-child(16) {
+    top: 120%;
+    left: 5%;
+    background: transparent;
+}
+button .add:nth-child(17) {
+    top: 180%;
+    left: 10%;
+}
+button .add:nth-child(18) {
+    top: 130%;
+    left: 20%;
+}
+button .add:nth-child(19) {
+    top: 180%;
+    left: 33%;
+    background: transparent;
+}
+button .add:nth-child(20) {
+    top: 180%;
+    left: 55%;
+}
+button .add:nth-child(21) {
+    top: 160%;
+    left: 75%;
+}
+button .add:nth-child(22) {
+    top: 130%;
+    left: 88%;
+    background: transparent;
+}
+button .add:nth-child(23) {
+    top: 140%;
+    left: 100%;
+}
+button .add:nth-child(24) {
+    top: 100%;
+    left: -40%;
+    background: transparent;
+}
+
+.anim {
+    animation: moving 0.5s linear reverse forwards;
+}
+
+
+@keyframes moving {
+    0%{
+        transform: scale(0);
+    }
+    10%{
+        transform: scale(1);
+    }
+    100%{
+        top: 60%;
+        left: 60%;
+    }
+    
+}
+
+.container {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+}
+
+#timer {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: font;
+  font-size: .7em;
+  letter-spacing: 5px;
+}
+
+.days, .hours, .minutes, .seconds {
+  display: inline-block;
+  padding: 20px;
+  width: 100px;
+  border-radius: 5px;
+}
+
+.numbers {
+  font-family: big;
+  color: dark;
+  font-size: 4em;
+}
