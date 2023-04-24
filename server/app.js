@@ -15,25 +15,10 @@ app.use(express.urlencoded({ extended : false}));
 app.post('/insert', (request, response) => {
     const { name, hours } = request.body;
     const db = dbService.getDBServiceInstance();
-
-    //console.log(JSON.parse(JSON.stringify(curr))[0]['SUM(time_spent)']);
-    //curr = JSON.parse(JSON.stringify(curr))[0]['SUM(time_spent)'] + hours;
-
     const result = db.insertNewName(name, hours);
-
     result
     .then(data => response.json({ data : data}))
     .catch(err => console.log(err));
-
-    /**
-    const time = db.calculateHours(name);
-
-    //calculates total time done for task and prints in console
-    //console.log(JSON.parse(JSON.stringify(data))[0]['SUM(time_spent)'])
-    time
-    .then(data => response.json({ time : JSON.parse(JSON.stringify(data))[0]['SUM(time_spent)']}))
-    .catch(err => console.log(err));
-    */
 });
 
 //read
@@ -71,6 +56,7 @@ app.delete('/delete/:id', (request, response) => {
     .catch(err => console.log(err));
 });
 
+//search
 app.get('/search/:name', (request, response) => {
     const { name } = request.params;
     const db = dbService.getDBServiceInstance();

@@ -15,7 +15,6 @@ connection.connect((err) => {
     if (err) {
         console.log(err.message);
     }
-    //console.log('db ' + connection.state);
 });
 
 
@@ -34,7 +33,6 @@ class DbService {
                     resolve(results);
                 })
             });
-            //console.log(response);
             return response;
         } catch (error) {
             console.log(error);
@@ -54,8 +52,6 @@ class DbService {
                 })
             });
             var insertId;
-            //console.log(typeof(curr_total));
-            //console.log(typeof(JSON.parse(JSON.stringify(curr_total))[0]['SUM(time_spent)']));
             if (JSON.parse(JSON.stringify(curr_total))[0]['SUM(time_spent)'] === null) {
                 curr_total = +hours;
                 console.log(typeof(curr_total));

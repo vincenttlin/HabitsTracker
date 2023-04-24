@@ -53,9 +53,6 @@ function handleEditRow(id) {
 updateBtn.onclick = function() {
     const updateNameInput = document.querySelector('#update-name-input');
 
-
-    console.log(updateNameInput);
-
     fetch('http://localhost:5000/update', {
         method: 'PATCH',
         headers: {
@@ -111,71 +108,23 @@ addBtn.onclick = function () {
             span.classList.remove("anim");
         }
     }, 500)
-
-    //calculates total time done for task and prints in console
-    //console.log(JSON.parse(JSON.stringify(data))[0]['SUM(time_spent)'])
-    //document.getElementById("time").innerHTML = JSON.parse(JSON.stringify(data))[0]['SUM(time_spent)']
-    
 }
 
 function insertRowIntoTable(data) {
     const table = document.querySelector('table tbody');
     const isTableData = table.querySelector('.no-data');
 
-    //display total time and task
-    /**
-    console.log(JSON.parse(JSON.stringify(data['curr_total'])));
-    if (JSON.parse(JSON.stringify(data['curr_total'])) === 0) {
-        document.getElementById("time").innerHTML = parseFloat(JSON.parse(JSON.stringify(data['hours'])));
-    } else {
-        document.getElementById("time").innerHTML = Math.round(parseFloat(JSON.parse(JSON.stringify(data['curr_total']))[0]['SUM(time_spent)'])
-        + parseFloat(JSON.parse(JSON.stringify(data['hours']))), 2);
-    }
-    */
     document.getElementById("task").innerHTML = data['name'];
     document.getElementById("time").innerHTML = data['curr_total'];
 
     let tableHtml = "<tr>";
-        //tableHtml += `<td>${id}</td>`;
-        tableHtml += `<td>${data['name']}</td>`;
-        tableHtml += `<td>${data['hours']}</td>`;
-        data['date_added'] = new Date(data['dateAdded']).toLocaleDateString();
-        tableHtml += `<td>${data['date_added']}</td>`;
-        tableHtml += `<td><button class='delete-row-btn' data-id=${data['id']}>Delete</td>`;
-        tableHtml += `<td><button class='edit-row-btn' data-id=${data['id']}>Edit</td>`;
-        tableHtml += "</tr>";
-
-    /**
-    let tableHtml = "<tr>";
-    
     tableHtml += `<td>${data['name']}</td>`;
-    if (data.hasOwnProperty('date_added')) {
-        data['date'] = new Date(data['date_added']).toLocaleDateString();
-        tableHtml += `<td>${data['date']}</td>`;
-    } else {
-        tableHtml += `<td>${data['date_added']}</td>`;
-    }
-    
-    for (var key in data) {
-        console.log(data['id']);
-        if (data.hasOwnProperty(key)) {
-            if (key === 'dateAdded') {
-                //var dateObj = new Date();
-                //var month = dateObj.getUTCMonth() + 1;
-                //var day = dateObj.getUTCDate();
-                //var year = dateObj.getUTCFullYear();
-                //data[key] = year + "/" + month + "/" + day;
-                data[key] = new Date(data[key]).toLocaleDateString();
-            }
-            tableHtml += `<td>${data[key]}</td>`;
-        }
-    }
-    tableHtml += `<td><button class='delete-row-btn' data-id=${data.id}>Delete</td>`;
-    tableHtml += `<td><button class='edit-row-btn' data-id=${data.id}>Edit</td>`;
-
+    tableHtml += `<td>${data['hours']}</td>`;
+    data['date_added'] = new Date(data['dateAdded']).toLocaleDateString();
+    tableHtml += `<td>${data['date_added']}</td>`;
+    tableHtml += `<td><button class='delete-row-btn' data-id=${data['id']}>Delete</td>`;
+    tableHtml += `<td><button class='edit-row-btn' data-id=${data['id']}>Edit</td>`;
     tableHtml += "</tr>";
-
-    */
 
     if (isTableData) {
         table.innerHTML = tableHtml;
@@ -195,15 +144,10 @@ function loadHTMLTable(data) {
         return;
     }
     let tableHtml = "";
-    //console.log(data);
-    //console.log(data[0]['curr_total']);
     data.forEach(function ({id, name, time_spent, date_added}) {
-        //console.log(data[0]['curr_total']);
-        console.log(data);
         document.getElementById("time").innerHTML = data[Object.keys(data).length - 1]['curr_total'];
         document.getElementById("task").innerHTML = data[0]['name'];
         tableHtml += "<tr>";
-        //tableHtml += `<td>${id}</td>`;
         tableHtml += `<td>${name}</td>`;
         tableHtml += `<td>${time_spent}</td>`;
         tableHtml += `<td>${new Date(date_added).toLocaleDateString()}</td>`;
@@ -260,13 +204,13 @@ let timer = setInterval(function() {
   // display
   document.getElementById("timer").innerHTML =
     "<div class=\"days\"> \
-  <div class=\"numbers\">" + days + "</div>days</div> \
-<div class=\"hours\"> \
-  <div class=\"numbers\">" + hours + "</div>hours</div> \
-<div class=\"minutes\"> \
-  <div class=\"numbers\">" + minutes + "</div>minutes</div> \
-<div class=\"seconds\"> \
-  <div class=\"numbers\">" + seconds + "</div>seconds</div> \
-</div>";
+    <div class=\"numbers\">" + days + "</div>days</div> \
+    <div class=\"hours\"> \
+    <div class=\"numbers\">" + hours + "</div>hours</div> \
+    <div class=\"minutes\"> \
+    <div class=\"numbers\">" + minutes + "</div>minutes</div> \
+    <div class=\"seconds\"> \
+    <div class=\"numbers\">" + seconds + "</div>seconds</div> \
+    </div>";
 
 }, 1000);

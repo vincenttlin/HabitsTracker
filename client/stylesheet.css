@@ -6,13 +6,6 @@ main {
     margin: 50px auto;
     text-align: center;
 }
-/**
-table {
-    margin: 50px auto;
-    border-collapse: collapse;
-    border: 1px solid black;
-}
-*/
 
 #time, #task {
     color: #009879;
@@ -100,7 +93,6 @@ input {
     color: #222;
 }
 
-/* ONE */
 .custom-field.one input {
     background: none;
     border: 2px solid #ddd;
@@ -135,14 +127,6 @@ input {
 #hours-input {
     margin: 5px auto;
 }
-
-/**
-th, td {
-    padding: 5px;
-    border-collapse: collapse;
-    border: 1px solid black;
-}
-*/
 
 h1 {
     text-align: center;
