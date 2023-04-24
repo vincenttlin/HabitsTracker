@@ -1,2 +1,2 @@
-# Habits Tracker
+# HabitsTracker
 Run MySQL and nodemon app
